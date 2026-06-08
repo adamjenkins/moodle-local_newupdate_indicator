@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<XMLDB PATH="local/newupdate_indicator/db" VERSION="2026060802" COMMENT="XMLDB file for Moodle local/newupdate_indicator"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="../../../lib/xmldb/xmldb.xsd"
+>
+  <TABLES>
+    <TABLE NAME="local_newupdate_indicator" COMMENT="Per-course overrides for the new/updated activity indicator settings">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
+        <FIELD NAME="courseid" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false" COMMENT="The course this override applies to"/>
+        <FIELD NAME="timespan" TYPE="int" LENGTH="10" NOTNULL="false" SEQUENCE="false" COMMENT="Override: time-span in seconds (null = use site default)"/>
+        <FIELD NAME="newenabled" TYPE="int" LENGTH="1" NOTNULL="false" SEQUENCE="false" COMMENT="Override: whether the new indicator is shown (null = use site default)"/>
+        <FIELD NAME="newlabel" TYPE="char" LENGTH="255" NOTNULL="false" SEQUENCE="false" COMMENT="Override: label text for the new indicator (null = use site default)"/>
+        <FIELD NAME="newicon" TYPE="char" LENGTH="100" NOTNULL="false" SEQUENCE="false" COMMENT="Override: icon identifier for the new indicator (null = use site default)"/>
+        <FIELD NAME="newcolour" TYPE="char" LENGTH="20" NOTNULL="false" SEQUENCE="false" COMMENT="Override: colour style identifier for the new indicator (null = use site default)"/>
+        <FIELD NAME="updatedenabled" TYPE="int" LENGTH="1" NOTNULL="false" SEQUENCE="false" COMMENT="Override: whether the updated indicator is shown (null = use site default)"/>
+        <FIELD NAME="updatedlabel" TYPE="char" LENGTH="255" NOTNULL="false" SEQUENCE="false" COMMENT="Override: label text for the updated indicator (null = use site default)"/>
+        <FIELD NAME="updatedicon" TYPE="char" LENGTH="100" NOTNULL="false" SEQUENCE="false" COMMENT="Override: icon identifier for the updated indicator (null = use site default)"/>
+        <FIELD NAME="updatedcolour" TYPE="char" LENGTH="20" NOTNULL="false" SEQUENCE="false" COMMENT="Override: colour style identifier for the updated indicator (null = use site default)"/>
+        <FIELD NAME="position" TYPE="char" LENGTH="20" NOTNULL="false" SEQUENCE="false" COMMENT="Override: indicator position (null = use site default)"/>
+        <FIELD NAME="showrecentlist" TYPE="int" LENGTH="1" NOTNULL="false" SEQUENCE="false" COMMENT="Override: whether to show the recent content list (null = use site default)"/>
+        <FIELD NAME="recentlistlimit" TYPE="int" LENGTH="10" NOTNULL="false" SEQUENCE="false" COMMENT="Override: maximum items in the recent content list (null = use site default)"/>
+        <FIELD NAME="timemodified" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false" COMMENT="Time the override was last modified"/>
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+        <KEY NAME="courseid" TYPE="foreign-unique" FIELDS="courseid" REFTABLE="course" REFFIELDS="id"/>
+      </KEYS>
+    </TABLE>
+  </TABLES>
+</XMLDB>

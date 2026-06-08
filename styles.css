@@ -1,0 +1,151 @@
+/* This file is part of Moodle - https://moodle.org/
+ *
+ * Moodle is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * Moodle is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with Moodle.  If not, see <https://www.gnu.org/licenses/>.
+ */
+
+.local-newupdate-indicator {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    font-size: 0.7rem;
+    font-weight: 700;
+    line-height: 1;
+    padding: 0.2rem 0.45rem;
+    border-radius: 0.65rem;
+    white-space: nowrap;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+}
+
+/*
+ * Colour styles, named after Bootstrap's contextual colours so that the
+ * indicators fit in with the site theme. Each pairs a soft background tint
+ * with a readable foreground colour; the custom properties fall back to
+ * fixed colours for themes that do not define the Bootstrap palette.
+ */
+.local-newupdate-indicator-colour-primary {
+    background-color: var(--bs-primary-bg-subtle, #cfe2ff);
+    color: var(--bs-primary-text-emphasis, #052c65);
+}
+
+.local-newupdate-indicator-colour-secondary {
+    background-color: var(--bs-secondary-bg-subtle, #e2e3e5);
+    color: var(--bs-secondary-text-emphasis, #41464b);
+}
+
+.local-newupdate-indicator-colour-success {
+    background-color: var(--bs-success-bg-subtle, #d1e7dd);
+    color: var(--bs-success-text-emphasis, #0a3622);
+}
+
+.local-newupdate-indicator-colour-danger {
+    background-color: var(--bs-danger-bg-subtle, #f8d7da);
+    color: var(--bs-danger-text-emphasis, #58151c);
+}
+
+.local-newupdate-indicator-colour-warning {
+    background-color: var(--bs-warning-bg-subtle, #fff3cd);
+    color: var(--bs-warning-text-emphasis, #664d03);
+}
+
+.local-newupdate-indicator-colour-info {
+    background-color: var(--bs-info-bg-subtle, #cff4fc);
+    color: var(--bs-info-text-emphasis, #055160);
+}
+
+.local-newupdate-indicator-colour-light {
+    background-color: var(--bs-light-bg-subtle, #fcfcfd);
+    color: var(--bs-light-text-emphasis, #495057);
+}
+
+.local-newupdate-indicator-colour-dark {
+    background-color: var(--bs-dark-bg-subtle, #ced4da);
+    color: var(--bs-dark-text-emphasis, #212529);
+}
+
+.local-newupdate-indicator-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1rem;
+    height: 1rem;
+}
+
+.local-newupdate-indicator-icon img,
+.local-newupdate-indicator-icon svg {
+    width: 100%;
+    height: 100%;
+}
+
+/* Inline positions: the badge sits in the text flow next to the activity link. */
+.local-newupdate-indicator-pos-beforelink,
+.local-newupdate-indicator-pos-afterlink,
+.local-newupdate-indicator-pos-inline {
+    position: static;
+}
+
+.local-newupdate-indicator-pos-beforelink {
+    margin-inline-end: 0.4rem;
+}
+
+.local-newupdate-indicator-pos-afterlink {
+    margin-inline-start: 0.4rem;
+}
+
+/*
+ * Corner positions: the badge is absolutely positioned within the padded area
+ * of the activity item. JS adds the "-positioned" marker class to establish a
+ * local positioning context, so we don't have to make ".activity-item" itself
+ * "position: relative" (which could affect other plugins/themes).
+ */
+.activity-item.local-newupdate-indicator-positioned {
+    position: relative;
+}
+
+.local-newupdate-indicator-pos-topleft,
+.local-newupdate-indicator-pos-topright,
+.local-newupdate-indicator-pos-bottomleft,
+.local-newupdate-indicator-pos-bottomright {
+    position: absolute;
+    z-index: 2;
+    max-width: calc(50% - 1.5rem);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    pointer-events: none;
+}
+
+.local-newupdate-indicator-pos-topleft {
+    top: 0.15rem;
+    left: 0.15rem;
+}
+
+.local-newupdate-indicator-pos-topright {
+    top: 0.15rem;
+    right: 0.15rem;
+}
+
+.local-newupdate-indicator-pos-bottomleft {
+    bottom: 0.15rem;
+    left: 0.15rem;
+}
+
+.local-newupdate-indicator-pos-bottomright {
+    bottom: 0.15rem;
+    right: 0.15rem;
+}
+
+.local-newupdate-indicator-list .local-newupdate-indicator {
+    text-transform: none;
+    letter-spacing: normal;
+}
