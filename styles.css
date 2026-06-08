@@ -126,22 +126,22 @@
 }
 
 .local-newupdate-indicator-pos-topleft {
-    top: 0.15rem;
+    top: -0.85rem;
     left: 0.15rem;
 }
 
 .local-newupdate-indicator-pos-topright {
-    top: 0.15rem;
+    top: -0.85rem;
     right: 0.15rem;
 }
 
 .local-newupdate-indicator-pos-bottomleft {
-    bottom: 0.15rem;
+    bottom: -0.85rem;
     left: 0.15rem;
 }
 
 .local-newupdate-indicator-pos-bottomright {
-    bottom: 0.15rem;
+    bottom: -0.85rem;
     right: 0.15rem;
 }
 
