@@ -74,5 +74,21 @@ function xmldb_local_newupdate_indicator_upgrade(int $oldversion): bool {
         upgrade_plugin_savepoint(true, 2026060802, 'local', 'newupdate_indicator');
     }
 
+    if ($oldversion < 2026060803) {
+        // The capability was renamed from local/newupdateindicator:manage to
+        // local/newupdate_indicator:manage to match the component name (the
+        // rename itself is handled by the automatic capabilities update; any
+        // role customisations of the old capability revert to the archetype
+        // defaults). Event observers and course backup/restore support were
+        // also added; there is no data to migrate.
+        upgrade_plugin_savepoint(true, 2026060803, 'local', 'newupdate_indicator');
+    }
+
+    if ($oldversion < 2026060804) {
+        // The legacy before_footer lib.php callback was migrated to the Hooks
+        // API (db/hooks.php); there is no data to migrate.
+        upgrade_plugin_savepoint(true, 2026060804, 'local', 'newupdate_indicator');
+    }
+
     return true;
 }

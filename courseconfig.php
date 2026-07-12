@@ -33,7 +33,7 @@ $course = $DB->get_record('course', ['id' => $courseid], '*', MUST_EXIST);
 $context = context_course::instance($course->id);
 
 require_login($course);
-require_capability('local/newupdateindicator:manage', $context);
+require_capability('local/newupdate_indicator:manage', $context);
 
 $pageurl = new moodle_url('/local/newupdate_indicator/courseconfig.php', ['courseid' => $courseid]);
 $returnurl = new moodle_url('/course/view.php', ['id' => $courseid]);

@@ -22,7 +22,6 @@
  * @license     https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-use local_newupdate_indicator\local\page_injector;
 
 /**
  * Adds a link to the course administration menu for managing per-course indicator settings.
@@ -38,7 +37,7 @@ function local_newupdate_indicator_extend_settings_navigation(navigation_node $s
         return;
     }
 
-    if (!has_capability('local/newupdateindicator:manage', $context)) {
+    if (!has_capability('local/newupdate_indicator:manage', $context)) {
         return;
     }
 
@@ -62,33 +61,4 @@ function local_newupdate_indicator_extend_settings_navigation(navigation_node $s
     }
 
     $coursenode->add_node($node);
-}
-
-/**
- * Injects the indicator JavaScript on course view pages.
- *
- * Implements the legacy `before_footer` callback, which is automatically routed
- * through the {@see \core\hook\output\before_footer_html_generation} hook.
- *
- * @return string Always an empty string; the work is done as a side effect (loading JS)
- */
-function local_newupdate_indicator_before_footer(): string {
-    global $PAGE;
-
-    if ($PAGE->course->id == SITEID) {
-        return '';
-    }
-
-    if (strpos((string) $PAGE->pagetype, 'course-view-') !== 0) {
-        return '';
-    }
-
-    $data = page_injector::build_page_data($PAGE->course);
-    if (empty($data)) {
-        return '';
-    }
-
-    $PAGE->requires->js_call_amd('local_newupdate_indicator/indicator', 'init', [$data]);
-
-    return '';
 }

@@ -111,12 +111,24 @@ const insertRecentList = (html) => {
 /**
  * Initialises the indicator overlay for the current course page.
  *
- * @param {Object} data
- * @param {Array} data.badges Array of {cmid, position, html} describing each indicator badge
- * @param {String|null} data.recentlisthtml Pre-rendered recent content list markup, or null
+ * The payload is read from a JSON script tag emitted by the before-footer
+ * hook rather than being passed as a js_call_amd argument, because the
+ * pre-rendered markup easily exceeds the 1024 character argument limit.
+ *
  * @return {void}
  */
-export const init = (data) => {
+export const init = () => {
+    const holder = document.querySelector('script[data-region="local_newupdate_indicator-data"]');
+    if (!holder) {
+        return;
+    }
+
+    let data = null;
+    try {
+        data = JSON.parse(holder.textContent);
+    } catch (e) {
+        return;
+    }
     if (!data) {
         return;
     }

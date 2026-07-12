@@ -111,8 +111,8 @@ class indicator_finder {
      * grouped by module name (the table that needs to be queried).
      *
      * @param \cm_info[] $cms
-     * @param array<int, int> $addedtimes added timestamps keyed by course module id,
-     *                                    used to determine which modules to look up
+     * @param int[] $addedtimes added timestamps keyed by course module id,
+     *                          used to determine which modules to look up
      * @return array<string, array<int, int>> timemodified values keyed by [modname][instanceid]
      */
     protected static function get_modified_times(array $cms, array $addedtimes): array {
