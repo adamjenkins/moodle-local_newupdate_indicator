@@ -1,0 +1,10 @@
+{
+    "name": "adamjenkins/moodle-local_newupdate_indicator",
+    "description": "Highlights recently added and recently modified activities and resources directly on the course page",
+    "type": "moodle-local",
+    "require": {
+        "moodle/moodle": ">=5.0 <5.3",
+        "moodle/composer-installer": "^1.0"
+    },
+    "license": "GPL-3.0-or-later"
+}
