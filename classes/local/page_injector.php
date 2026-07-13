@@ -148,7 +148,7 @@ class page_injector {
         if ($iconhtml !== '') {
             $content .= \html_writer::tag('span', $iconhtml, ['class' => 'local-newupdate-indicator-icon']);
         }
-        $content .= \html_writer::tag('span', $label, ['class' => 'local-newupdate-indicator-label']);
+        $content .= \html_writer::tag('span', s($label), ['class' => 'local-newupdate-indicator-label']);
 
         return \html_writer::tag('span', $content, ['class' => $classes]);
     }

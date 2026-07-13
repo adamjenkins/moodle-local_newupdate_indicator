@@ -24,7 +24,6 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-$string['backtocourse'] = 'Back to course';
 $string['colour_danger'] = 'Danger (red)';
 $string['colour_dark'] = 'Dark';
 $string['colour_info'] = 'Info (cyan)';
@@ -59,7 +58,6 @@ $string['newindicatorsettings'] = '"New" indicator';
 $string['newlabel'] = 'Label text';
 $string['newlabel_desc'] = 'The text displayed next to newly added activities.';
 $string['newupdate_indicator:manage'] = 'Manage new/updated indicator settings for a course';
-$string['no'] = 'No';
 $string['override'] = 'Override site default settings for this course';
 $string['override_help'] = 'When enabled, the settings below apply only to this course and take precedence over the site administration defaults. When disabled, this course follows the site defaults and any values entered below are ignored.';
 $string['pluginname'] = 'New and updated activity indicator';
@@ -79,8 +77,6 @@ $string['recentlisttitle'] = 'New and recently updated';
 $string['settingssaved'] = 'New/updated indicator settings saved';
 $string['showrecentlist'] = 'Show recent content list';
 $string['showrecentlist_desc'] = 'Display a short list of newly added or recently updated content at the top of the course page.';
-$string['statusnew'] = 'New';
-$string['statusupdated'] = 'Updated';
 $string['timespan'] = 'Indicator time-span';
 $string['timespan_desc'] = 'How long an activity continues to display a "new" or "updated" indicator after it was added or modified. Once this period has elapsed, no indicator is shown.';
 $string['updatedcolour'] = 'Colour style';
@@ -92,5 +88,3 @@ $string['updatedicon_desc'] = 'The icon displayed next to recently updated activ
 $string['updatedindicatorsettings'] = '"Updated" indicator';
 $string['updatedlabel'] = 'Label text';
 $string['updatedlabel_desc'] = 'The text displayed next to recently updated activities.';
-$string['usesitedefault'] = 'Use site default ({$a})';
-$string['yes'] = 'Yes';

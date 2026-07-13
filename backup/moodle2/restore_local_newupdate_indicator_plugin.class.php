@@ -55,6 +55,26 @@ class restore_local_newupdate_indicator_plugin extends restore_local_plugin {
         $data->timemodified = time();
         unset($data->id);
 
+        $data->newlabel = $this->clean_label($data->newlabel ?? null);
+        $data->updatedlabel = $this->clean_label($data->updatedlabel ?? null);
+        $data->newicon = $this->clean_option($data->newicon ?? null, \local_newupdate_indicator\local\config::get_icon_options());
+        $data->updatedicon = $this->clean_option(
+            $data->updatedicon ?? null,
+            \local_newupdate_indicator\local\config::get_icon_options()
+        );
+        $data->newcolour = $this->clean_option(
+            $data->newcolour ?? null,
+            \local_newupdate_indicator\local\config::get_colour_options()
+        );
+        $data->updatedcolour = $this->clean_option(
+            $data->updatedcolour ?? null,
+            \local_newupdate_indicator\local\config::get_colour_options()
+        );
+        $data->position = $this->clean_option(
+            $data->position ?? null,
+            \local_newupdate_indicator\local\config::get_position_options()
+        );
+
         if ($existing = $DB->get_record('local_newupdate_indicator', ['courseid' => $data->courseid])) {
             $data->id = $existing->id;
             $DB->update_record('local_newupdate_indicator', $data);
@@ -63,5 +83,34 @@ class restore_local_newupdate_indicator_plugin extends restore_local_plugin {
         }
 
         \local_newupdate_indicator\local\config::reset_caches();
+    }
+
+    /**
+     * Sanitises a restored label value the same way the interactive form does.
+     *
+     * @param mixed $value
+     * @return string|null
+     */
+    protected function clean_label($value): ?string {
+        if ($value === null) {
+            return null;
+        }
+        return clean_param($value, PARAM_TEXT);
+    }
+
+    /**
+     * Validates a restored option value against the allowed identifiers,
+     * discarding anything that is not one of them (falls back to the site
+     * default, mirroring how a null override column is treated).
+     *
+     * @param mixed $value
+     * @param array $options Allowed identifiers, keyed the same way as config::get_icon_options() and siblings
+     * @return string|null
+     */
+    protected function clean_option($value, array $options): ?string {
+        if ($value === null || $value === '') {
+            return null;
+        }
+        return array_key_exists($value, $options) ? $value : null;
     }
 }

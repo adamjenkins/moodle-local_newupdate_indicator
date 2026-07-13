@@ -28,6 +28,19 @@ All notable changes to the New/updated activity indicator (`local_newupdate_indi
 - Added the moodle-release.yml workflow for automatic Moodle Plugins
   directory releases, and CHANGES.md release notes.
 
+### Fixed
+
+- Stored XSS: the indicator badge label was written into the page as
+  unescaped HTML content and inserted into the DOM via `innerHTML`. Both
+  interactive input paths (the per-course form and the site admin setting)
+  already sanitised the label, but course restore wrote the backed-up value
+  verbatim, so a crafted backup could plant a payload that ran in every
+  course participant's browser. The label is now HTML-encoded at output, and
+  restore additionally cleans the label and validates the icon/colour/
+  position values against their allowed option lists before storing them.
+- Removed unused and core-duplicating language strings (`backtocourse`,
+  `statusnew`, `statusupdated`, `usesitedefault`, `yes`, `no`).
+
 ## [1.0.0] - 2026-06-08
 
 Initial release.

@@ -8,6 +8,10 @@
   the component name); re-apply any custom role permissions after upgrading.
 - CI tests Moodle 5.0, 5.1 and 5.2 with compatible PHP versions
   (5.0: 8.2-8.3, 5.1: 8.2-8.4, 5.2: 8.3-8.4).
+- Fixed a stored XSS: the indicator label is now HTML-encoded at output, and
+  values restored from a course backup are sanitised the same way the
+  settings forms already were.
+- Removed a handful of unused/duplicate language strings.
 
 ## v1.0.0
 
