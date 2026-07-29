@@ -1,0 +1,21 @@
+# camp listing manifest — descriptive content for your plugin's page.
+# Edit freely and commit; camp ingests this file at each tagged release.
+# Schema: https://camp-registry.org/schema/listing.schema.json
+name: local_newupdate_indicator
+summary: 'Highlights recently added and recently modified activities directly on the course page, so students can spot what''s new.'
+description: |
+  Shows "New" badges next to activities added within a configurable
+  time-span and "Updated" badges next to recently modified ones, plus an
+  optional recent-content list at the top of the course page summarising the
+  newest items. Configurable site-wide, with optional per-course overrides.
+labels:
+  # Required disclosure labels — pick all that apply (RFC §4.7):
+  #   fully-free | freemium | paid-service | external-account
+  #   donation-supported | commercial-support-available
+  - fully-free
+# screenshots:
+#   - path: .camp/screenshots/overview.png
+#     caption: Main view
+# links:
+#   docs: https://…
+#   issues: https://…
