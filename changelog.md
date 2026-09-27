@@ -2,6 +2,12 @@
 
 All notable changes to the New/updated activity indicator (`local_newupdate_indicator`) are documented in this file.
 
+## [Unreleased]
+
+### Changed
+
+- Declare Moodle 5.3 support
+
 ## [1.1.1] - 2026-08-04
 
 ### Added
