@@ -2,7 +2,7 @@
 
 All notable changes to the New/updated activity indicator (`local_newupdate_indicator`) are documented in this file.
 
-## [Unreleased]
+## [1.1.2] - 2026-10-03
 
 ### Changed
 
