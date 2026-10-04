@@ -16,7 +16,7 @@ course can optionally override those defaults for its own needs.
 
 ## Requirements
 
-- Moodle 5.0+ (`$plugin->requires = 2024100700;`)
+- Moodle 5.0+ (`$plugin->requires = 2025041400;`)
 - PHP as required by your Moodle version
 
 ## Installation

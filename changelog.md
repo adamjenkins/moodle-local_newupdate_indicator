@@ -2,6 +2,14 @@
 
 All notable changes to the New/updated activity indicator (`local_newupdate_indicator`) are documented in this file.
 
+## [Unreleased]
+
+### Changed
+
+- The minimum Moodle version (`$plugin->requires`) is raised from 4.5
+  (2024100700) to 5.0 (2025041400) so it matches the declared supported range
+  (Moodle 5.0 to 5.3). Moodle 4.5 was never supported or tested.
+
 ## [1.1.2] - 2026-10-03
 
 ### Changed
