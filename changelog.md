@@ -2,13 +2,24 @@
 
 All notable changes to the New/updated activity indicator (`local_newupdate_indicator`) are documented in this file.
 
-## [Unreleased]
+## [1.1.3] - 2026-10-04
+
+### Added
+
+- `.github/workflows/camp-release.yml`: pushing a `v*` tag publishes the
+  release to the camp registry through
+  `camp-registry/camp-workflows`' `release.yml@v1`.
+- `tests/version_test.php`, covering the `version.php` metadata.
 
 ### Changed
 
 - The minimum Moodle version (`$plugin->requires`) is raised from 4.5
   (2024100700) to 5.0 (2025041400) so it matches the declared supported range
   (Moodle 5.0 to 5.3). Moodle 4.5 was never supported or tested.
+- composer.json's `moodle/moodle` constraint is now `^5.0` (was
+  `>=5.0 <5.4`), so new 5.x releases are not excluded.
+- CI tests `MOODLE_503_STABLE` (PHP 8.3-8.4, PostgreSQL 17, MariaDB 11.4)
+  as blocking rows, replacing the non-blocking moodle.git `main` rows.
 
 ## [1.1.2] - 2026-10-03
 

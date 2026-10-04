@@ -25,8 +25,8 @@
 defined('MOODLE_INTERNAL') || die();
 
 $plugin->component = 'local_newupdate_indicator';
-$plugin->release = '1.1.2';
-$plugin->version = 2026100300;
+$plugin->release = '1.1.3';
+$plugin->version = 2026100400;
 $plugin->requires = 2025041400;
 $plugin->supported = [500, 503];
 $plugin->maturity = MATURITY_BETA;
