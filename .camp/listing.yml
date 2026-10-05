@@ -13,9 +13,11 @@ labels:
   #   fully-free | freemium | paid-service | external-account
   #   donation-supported | commercial-support-available
   - fully-free
-# screenshots:
-#   - path: .camp/screenshots/overview.png
-#     caption: Main view
+screenshots:
+  - path: .camp/screenshots/01-course-page-badges.png
+    caption: 'A course page with a "NEW" badge on each recent activity and the "New and recently updated" list at the top'
+  - path: .camp/screenshots/02-activity-badges.png
+    caption: Close-up of the badges and the recent-content list
 # links:
 #   docs: https://…
 #   issues: https://…
