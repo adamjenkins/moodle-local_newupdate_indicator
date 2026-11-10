@@ -80,7 +80,7 @@ that don't define the Bootstrap design tokens).
 
 ## Per-course overrides
 
-Teachers and managers (anyone with the `local/newupdateindicator:manage`
+Teachers and managers (anyone with the `local/newupdate_indicator:manage`
 capability — granted to the *Teacher* and *Manager* roles by default) can
 override any of the site defaults for an individual course from
 *Course administration → New/updated indicator settings*. This includes:
@@ -101,7 +101,7 @@ ignored.
 
 | Capability | Description | Default roles |
 | --- | --- | --- |
-| `local/newupdateindicator:manage` | Manage new/updated indicator settings for a course | Teacher, Manager |
+| `local/newupdate_indicator:manage` | Manage new/updated indicator settings for a course | Teacher, Manager |
 
 ## Privacy
 
