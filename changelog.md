@@ -2,6 +2,27 @@
 
 All notable changes to the New/updated activity indicator (`local_newupdate_indicator`) are documented in this file.
 
+## [1.1.4] - 2026-11-10
+
+### Added
+
+- Plugin icon `pix/icon.svg` for the admin plugins page.
+- Two camp listing screenshots in `.camp/screenshots/`, listed with captions
+  in `.camp/listing.yml`.
+
+### Changed
+
+- `styles.css`: the `.local-newupdate-indicator-colour-{primary,secondary,success,danger,warning,info}`
+  rules read the Moodle Design System tokens first
+  (`--mds-bg-feedback-*-subtle`, `--mds-text-feedback-*`), then the Bootstrap
+  variables, then the original fixed colours, so the badges follow Moodle
+  5.3's dark colour mode and are unchanged on older branches.
+
+### Fixed
+
+- README: the capability is `local/newupdate_indicator:manage` (it said
+  `local/newupdateindicator:manage`, the name used before the rename).
+
 ## [1.1.3] - 2026-10-04
 
 ### Added
